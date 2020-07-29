@@ -1,6 +1,6 @@
 # hole project
 # type <python-project main.py>
-# version <1.3-alpha-I> <snapshot>
+# version <1.3.0-alpha-I> <snapshot>
 # online version <1.3-alpha-I>
 # status <ok> <online>
 # ==========project from EnergyMC=========
