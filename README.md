@@ -1,20 +1,20 @@
 # dodge_shell
- A simple game made with pygame
- 
-Language:  Chinese
 
-how to run:
-1. download python (if you already download it, skip this step)
-2. download files
-3. run main.py
+language/语言: Chinese/中文
 
-how to play:
-  use keyborad:
-    [left] move left
-    [right] move right
-    [space] Electromagnetic wave
-    [P] pause game
-  use fingertip piano:
-    [joystick] move
-    [button A] Electromagnetic wave
-    [button B] pause game
+我要怎么运行？
+1. 下载python3（如果你已经有了python3，跳过此步骤）
+2. 下载文件
+3. 运行“main.py”
+
+操作方法：
+
+    键盘：
+        [left] 向左移动
+        [right] 向右移动
+        [space] 电磁波
+        [P] 暂停游戏
+    指尖钢琴：
+        [摇杆] 移动
+        [Button A] 电磁波
+        [Button B] 暂停游戏
