@@ -102,9 +102,8 @@ def check_events(steve, startrec, screen, myFont, piano):
     return startrec
 
 
-def update_screen(settings, screen, steve, tnts, sb, h1, h2, h3, cool_down):
-    # set bgc
-    screen.fill(settings.bgc)
+def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):
+    screen.fill((255, 255, 255))
 
     # blit steve
     steve.blitme()
