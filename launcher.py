@@ -13,15 +13,20 @@ def launcher():
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
 """,
-            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式"])
+            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置"])
         if openyn == 0:
             return piano, skin
         elif openyn == 1 or openyn is None:
             exit()
         elif openyn == 2:
-            skin = g.choicebox("请选择皮肤", choices=["steve", "alex", "HIM"])
+            if g.ccbox("更换什么类型的皮肤?", choices=["默认皮肤", "自加皮肤"]):
+                skin = g.choicebox("请选择皮肤", choices=["steve", "alex", "HIM"])
+            else:
+                skin = g.enterbox("请输入皮肤文件名（例如：adam）（只能是png图片文件）")
         elif openyn == 3:
             piano = not piano
+        elif openyn is None:
+            exit()
 
 
 def die(score, hard):
