@@ -96,7 +96,7 @@ def run_game(piano):
                 tnt_num -= 1
                 tnts.remove(tnt)
                 gs.score += hard
-        gf.update_screen(settings, screen, steve, tnts, sb, h1, h2, h3, cool_down)
+        gf.update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down)
 
 
 data_for_game = launcher()
