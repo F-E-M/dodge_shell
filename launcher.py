@@ -13,7 +13,7 @@ def launcher():
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
 """,
-            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置"])
+            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式"])
         if openyn == 0:
             return piano, skin
         elif openyn == 1 or openyn is None:

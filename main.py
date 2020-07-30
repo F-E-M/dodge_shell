@@ -55,9 +55,6 @@ def run_game(piano):
     # main loop
     while True:
         clock.tick(180)
-        # entity dic
-        for x in tnts.copy():
-            etnts.append(x)
         h1.update(heal)
         h2.update(heal)
         h3.update(heal)
