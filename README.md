@@ -8,6 +8,7 @@ language/语言: Chinese/中文
 3. 运行“main.py”
 
 操作方法：
+
     键盘：
         [left] 向左移动
         [right] 向右移动
