@@ -7,9 +7,9 @@ class Steve:
         self.screen = screen
 
         # load image and get rect
-        self.image = pygame.image.load(f"skin/{skin}.png")
+        self.image = pygame.image.load(f"{skin}.png")
         self.image = pygame.transform.scale(self.image, (82, 163))
-        self.kick_image = pygame.image.load(f"skin/{skin}_kick.png")
+        self.kick_image = pygame.image.load(f"{skin}_kick.png")
         self.kick_image = pygame.transform.scale(self.kick_image, (82, 163))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()

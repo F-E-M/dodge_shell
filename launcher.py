@@ -19,14 +19,9 @@ def launcher():
         elif openyn == 1 or openyn is None:
             exit()
         elif openyn == 2:
-            if g.ccbox("更换什么类型的皮肤?", choices=["默认皮肤", "自加皮肤"]):
-                skin = g.choicebox("请选择皮肤", choices=["steve", "alex", "HIM"])
-            else:
-                skin = g.enterbox("请输入皮肤文件名（例如：adam）（只能是png图片文件）")
+            skin = g.choicebox("请选择皮肤", choices=["steve", "alex", "HIM"])
         elif openyn == 3:
             piano = not piano
-        elif openyn is None:
-            exit()
 
 
 def die(score, hard):
