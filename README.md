@@ -18,3 +18,5 @@ language/语言: Chinese/中文
         [摇杆] 移动
         [Button A] 电磁波
         [Button B] 暂停游戏
+
+技能介绍位于文件“skill_description.md”
