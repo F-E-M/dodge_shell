@@ -29,7 +29,6 @@ def run_game(piano):
     gs.reset()
     my_font = pygame.font.SysFont("kaiti", 100)
     tnts = Group()
-    etnts = []
 
     # init window
     screen = pygame.display.set_mode((settings.width, settings.height))
