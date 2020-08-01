@@ -22,18 +22,18 @@ import random
 def run_game(piano):
     # init game
     clock = pygame.time.Clock()
-    SetWindowPos = windll.user32.SetWindowPos
+    set_window_pos = windll.user32.SetWindowPos
     pygame.init()
     settings = Settings()
     gs = GameStats()
     gs.reset()
-    myFont = pygame.font.SysFont("kaiti", 100)
+    my_font = pygame.font.SysFont("kaiti", 100)
     tnts = Group()
     etnts = []
 
     # init window
     screen = pygame.display.set_mode((settings.width, settings.height))
-    SetWindowPos(pygame.display.get_wm_info()['window'], -1, 0, 0, 0, 0, 0x0001)
+    set_window_pos(pygame.display.get_wm_info()['window'], -1, 0, 0, 0, 0, 0x0001)
     screen_rect = screen.get_rect()
     icon = pygame.image.load("icon.ico")
     pygame.display.set_icon(icon)
@@ -79,7 +79,7 @@ def run_game(piano):
                 hard -= 1
                 t1 = t2
 
-        startrec = gf.check_events(steve, startrec, screen, myFont, piano)
+        startrec = gf.check_events(steve, startrec, screen, my_font, piano)
         steve.update()
 
         tnts.update()
