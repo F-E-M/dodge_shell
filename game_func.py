@@ -7,7 +7,7 @@ from game_stats import GameStats
 game_stats = GameStats()
 
 
-def check_events(steve, startrec, screen, myFont, piano):
+def check_events(steve, start_rec, screen, my_font, piano):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -28,7 +28,7 @@ def check_events(steve, startrec, screen, myFont, piano):
                     if breaking:
                         break
                     screen.fill((0, 0, 0))
-                    text = myFont.render("暂停", True, (255, 255, 255))
+                    text = my_font.render("暂停", True, (255, 255, 255))
                     screen.blit(text, (600, 300))
                     e = pygame.event.get()
                     for ev in e:
@@ -36,7 +36,7 @@ def check_events(steve, startrec, screen, myFont, piano):
                             if ev.key == pygame.K_p:
                                 pygame.mouse.set_visible(False)
                                 p2 = time.time()
-                                startrec += p2 - p1
+                                start_rec += p2 - p1
                                 breaking = True
                         elif ev.type == pygame.QUIT:
                             exit()
@@ -70,7 +70,7 @@ def check_events(steve, startrec, screen, myFont, piano):
             p1 = time.time()
             breaking = False
             screen.fill((0, 0, 0))
-            text = myFont.render("暂停", True, (255, 255, 255))
+            text = my_font.render("暂停", True, (255, 255, 255))
             screen.blit(text, (600, 300))
             pygame.display.flip()
             time.sleep(1)
@@ -78,13 +78,13 @@ def check_events(steve, startrec, screen, myFont, piano):
                 if breaking:
                     break
                 screen.fill((0, 0, 0))
-                text = myFont.render("暂停", True, (255, 255, 255))
+                text = my_font.render("暂停", True, (255, 255, 255))
                 screen.blit(text, (600, 300))
                 pygame.display.flip()
                 if mkpiano.piano.is_pressed(2):
                     pygame.mouse.set_visible(False)
                     p2 = time.time()
-                    startrec += p2 - p1
+                    start_rec += p2 - p1
                     breaking = True
                 e = pygame.event.get()
                 for ev in e:
@@ -99,7 +99,7 @@ def check_events(steve, startrec, screen, myFont, piano):
         if mkpiano.piano.joystick_x == 0:
             steve.LF = False
             steve.RF = False
-    return startrec
+    return start_rec
 
 
 def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):

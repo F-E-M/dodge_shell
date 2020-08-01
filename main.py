@@ -46,7 +46,7 @@ def run_game(piano):
     h2 = Health(screen, 2)
     h3 = Health(screen, 3)
     t1 = time.time()
-    startrec = t1
+    start_rec = t1
     tnt_num = 0
 
     pygame.mouse.set_visible(False)
@@ -59,8 +59,8 @@ def run_game(piano):
         h3.update(heal)
         t2 = time.time()
         nowrec = t2
-        hard = int((nowrec + 20 - startrec) / 20)
-        tntw = int(nowrec + 70 - startrec) / (hard * 41)
+        hard = int((nowrec + 20 - start_rec) / 20)
+        tntw = int(nowrec + 70 - start_rec) / (hard * 41)
         steve_tnt = False
         if random.randint(0, 4) == 0:
             steve_tnt = True
@@ -78,7 +78,7 @@ def run_game(piano):
                 hard -= 1
                 t1 = t2
 
-        startrec = gf.check_events(steve, startrec, screen, my_font, piano)
+        start_rec = gf.check_events(steve, start_rec, screen, my_font, piano)
         steve.update()
 
         tnts.update()
