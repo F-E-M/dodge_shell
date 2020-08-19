@@ -19,7 +19,7 @@ from ctypes import windll
 import random
 
 
-def run_game(piano):
+def run_game(piano, frame):
     # init game
     clock = pygame.time.Clock()
     set_window_pos = windll.user32.SetWindowPos
@@ -53,7 +53,7 @@ def run_game(piano):
     heal = 3
     # main loop
     while True:
-        clock.tick(180)
+        clock.tick(frame)
         h1.update(heal)
         h2.update(heal)
         h3.update(heal)
@@ -90,7 +90,7 @@ def run_game(piano):
         gs.score = ctcsl[2]
         con = gf.check_die(heal, gs.score, hard)
         if con:
-            run_game(pianos)
+            run_game(pianos, frame)
         for tnt in tnts.copy():
             if tnt.rect.top >= screen_rect.bottom:
                 tnt_num -= 1
@@ -102,5 +102,6 @@ def run_game(piano):
 data_for_game = launcher()
 pianos = data_for_game[0]
 skin = data_for_game[1]
+frame = data_for_game[2]
 
-run_game(pianos)
+run_game(pianos, frame)

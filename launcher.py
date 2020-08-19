@@ -2,10 +2,11 @@ import easygui as g
 
 piano = False
 skin = "steve"
+frame = 180
 
 
 def launcher():
-    global skin, piano
+    global skin, piano, frame
     while True:
         open_yn = g.indexbox(
             f"""
@@ -13,15 +14,25 @@ def launcher():
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
 """,
-            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式"])
+            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置游戏帧数"])
         if open_yn == 0:
-            return piano, skin
+            return piano, skin, frame
         elif open_yn == 1 or open_yn is None:
             exit()
         elif open_yn == 2:
             skin = g.choicebox("请选择皮肤", choices=["steve", "alex", "HIM"])
         elif open_yn == 3:
             piano = not piano
+        elif open_yn == 4:
+            frame = g.enterbox(f"请输入你要设置的帧数（数字）\n当前值为{frame}，建议不要低于120帧（越低越难，越高不会越简单）")
+            try:
+                if frame is not None:
+                    frame = int(frame)
+                else:
+                    frame = 180
+            except ValueError:
+                g.msgbox("错误的帧数！")
+                frame = 180
 
 
 def die(score, hard):
