@@ -13,6 +13,7 @@ def launcher():
                             躲避TNT V1.2-RC-I snapshot
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
+                                    帧数:{frame} 
 """,
             choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置游戏帧数"])
         if open_yn == 0:
