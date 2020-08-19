@@ -128,7 +128,7 @@ def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):
     pygame.display.flip()
 
 
-def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen):
+def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard):
     if pygame.sprite.spritecollideany(steve, tnts):
         if steve.kick is False:
             heal -= 1
@@ -146,8 +146,9 @@ def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen):
                 if tnt.rect.colliderect(steve):
                     tnts.remove(tnt)
                     tnt_num -= 1
+                    score += int(hard / 2)
                     break
-    return heal, tnt_num
+    return heal, tnt_num, score
 
 
 def check_die(heal, score, hard):

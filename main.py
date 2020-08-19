@@ -84,9 +84,10 @@ def run_game(piano):
         tnts.update()
         gf.kick_minus(steve)
         gf.check_kick(steve)
-        ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen)
+        ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, gs.score, hard)
         heal = ctcsl[0]
         tnt_num = ctcsl[1]
+        gs.score = ctcsl[2]
         con = gf.check_die(heal, gs.score, hard)
         if con:
             run_game(pianos)
