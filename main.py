@@ -21,6 +21,7 @@ import random
 
 def run_game(piano, frame):
     # init game
+    hard = 1
     clock = pygame.time.Clock()
     set_window_pos = windll.user32.SetWindowPos
     pygame.init()
@@ -59,7 +60,9 @@ def run_game(piano, frame):
         h3.update(heal)
         t2 = time.time()
         nowrec = t2
-        hard = int((nowrec + 20 - start_rec) / 20)
+        nhard = int((nowrec + 20 - start_rec) / (20 + int(hard / 2)))
+        if nhard > hard:
+            hard = nhard
         tntw = int(nowrec + 70 - start_rec) / (hard * 41)
         steve_tnt = False
         if random.randint(0, 4) == 0:
