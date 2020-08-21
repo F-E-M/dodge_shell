@@ -14,8 +14,7 @@ def launcher():
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
                                     tps:{frame} 
-""",
-            choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置游戏帧数"])
+""", choices=["开始游戏", "退出游戏", "更换皮肤", "指尖钢琴模式", "设置tps"])
         if open_yn == 0:
             return piano, skin, frame
         elif open_yn == 1 or open_yn is None:
