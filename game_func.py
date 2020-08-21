@@ -29,7 +29,7 @@ def check_events(steve, start_rec, screen, my_font, piano):
                         break
                     screen.fill((0, 0, 0))
                     text = my_font.render("暂停", True, (255, 255, 255))
-                    screen.blit(text, (600, 300))
+                    screen.blit(text, (500, 260))
                     e = pygame.event.get()
                     for ev in e:
                         if ev.type == pygame.KEYDOWN:
@@ -71,7 +71,7 @@ def check_events(steve, start_rec, screen, my_font, piano):
             breaking = False
             screen.fill((0, 0, 0))
             text = my_font.render("暂停", True, (255, 255, 255))
-            screen.blit(text, (600, 300))
+            screen.blit(text, (500, 260))
             pygame.display.flip()
             time.sleep(1)
             while True:
