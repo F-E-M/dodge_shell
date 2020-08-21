@@ -10,7 +10,7 @@ game_stats = GameStats()
 def check_events(steve, start_rec, screen, my_font, piano):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
                 # move steve right
