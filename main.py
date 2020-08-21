@@ -1,7 +1,7 @@
 # hole project
 # type <python-project main.py>
-# version <1.3.0-beta-I> <snapshot>
-# online version <1.3-beta-I>
+# version <1.3.0> <snapshot>
+# online version <1.3.0>
 # status <ok> <online>
 # ==========project from Infinity-Energy=========
 import time
