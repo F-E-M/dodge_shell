@@ -1,9 +1,11 @@
-# hole project
-# type <python-project main.py>
 # version <1.3.0> <release>
-# online version <1.3.0>
 # status <ok> <online>
-# ==========project from Infinity-Energy=========
+# ==========project from github organization "Infinity-EFP"=========
+# code by Infinity-Energy
+# art by Infinity-Energy, Felixqwq
+# test by Felixqwq
+
+# imports
 import time
 import pygame
 import pygame.locals
