@@ -30,7 +30,7 @@ def run_game(piano, frame):
     settings = Settings()
     gs = GameStats()
     gs.reset()
-    my_font = pygame.font.SysFont("kaiti", 100)
+    my_font = pygame.font.SysFont(None, 100)
     tnts = Group()
 
     # init window
