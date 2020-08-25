@@ -1,6 +1,6 @@
 # hole project
 # type <python-project main.py>
-# version <1.3.0> <snapshot>
+# version <1.3.0> <release>
 # online version <1.3.0>
 # status <ok> <online>
 # ==========project from Infinity-Energy=========
