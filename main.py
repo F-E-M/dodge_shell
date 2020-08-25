@@ -25,7 +25,6 @@ def run_game(piano, frame):
     # init game
     hard = 1
     clock = pygame.time.Clock()
-    set_window_pos = windll.user32.SetWindowPos
     pygame.init()
     settings = Settings()
     gs = GameStats()
@@ -35,7 +34,6 @@ def run_game(piano, frame):
 
     # init window
     screen = pygame.display.set_mode((settings.width, settings.height))
-    set_window_pos(pygame.display.get_wm_info()['window'], -1, 0, 0, 0, 0, 0x0001)
     screen_rect = screen.get_rect()
     icon = pygame.image.load("icon.ico")
     pygame.display.set_icon(icon)
