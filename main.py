@@ -17,7 +17,6 @@ from tnt import TNT
 from launcher import *
 from scoreboard import Scoreboard, CoolDown
 from game_stats import GameStats
-from ctypes import windll
 import random
 
 
@@ -67,8 +66,8 @@ def run_game(piano, frame):
         steve_tnt = False
         r1 = 0 - hard + 1
         r2 = 10 - hard * 2
-        while r2 - r1 >= 3:
-            r2 += 1
+        while r2 - r1 >= 30 - hard:
+            r1 += 1
         if random.randint(r1, r2) == 0:
             steve_tnt = True
         sb = Scoreboard(screen, gs, hard)
