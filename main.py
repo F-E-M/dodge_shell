@@ -81,15 +81,14 @@ def run_game(piano, frame):
                 if steve_tnt:
                     new_tnt.rect.centerx = steve.rect.centerx
                 tnts.add(new_tnt)
-                hard -= 1
                 t1 = t2
 
-        start_rec = gf.check_events(steve, start_rec, screen, my_font, piano)
+        start_rec = gf.check_events(steve, start_rec, screen, my_font, piano, hard)
         steve.update()
 
         tnts.update()
         gf.kick_minus(steve)
-        gf.check_kick(steve)
+        gf.check_kick(steve, hard)
         ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, gs.score, hard)
         heal = ctcsl[0]
         tnt_num = ctcsl[1]
