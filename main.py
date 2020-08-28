@@ -78,7 +78,7 @@ def run_game(piano, frame):
         cool_down = CoolDown(screen, steve)
         steve.speed = hard * 1.3
         if t2 - t1 > tntw:
-            if tnt_num <= 6:
+            if tnt_num <= 3:
                 tnt_num += 1
                 new_tnt = TNT(screen)
                 new_tnt.speed += hard * 0.6
