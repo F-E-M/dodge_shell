@@ -7,6 +7,7 @@
 
 # imports
 import time
+import sys
 import pygame
 import pygame.locals
 import game_func as gf
@@ -28,7 +29,10 @@ def run_game(piano, frame):
     settings = Settings()
     gs = GameStats()
     gs.reset()
-    my_font = pygame.font.SysFont(None, 100)
+    if sys.platform == "win32" or sys.platform == "cygwin":
+        my_font = pygame.font.SysFont("kaiti", 100)
+    else:
+        my_font = pygame.font.SysFont("kaitif", 100)
     tnts = Group()
 
     # init window
