@@ -1,5 +1,5 @@
 # version <1.3.0> <release>
-# status <ok> <online>
+# status <ok>
 # ==========project from github organization "Infinity-EFP"=========
 # code by Infinity-Energy
 # art by Infinity-Energy, Felixqwq
