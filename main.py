@@ -1,9 +1,8 @@
 # version <1.3.1-alpha> <release>
-# status <ok>
 # ==========project from github organization "Infinity-EFP"=========
 # code by Infinity-Energy
-# art by Infinity-Energy, Felixqwq
-# test by Felixqwq
+# art by Felixqwq
+# test by Infinity-Energy
 
 # imports
 import time
