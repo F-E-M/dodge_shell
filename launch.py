@@ -1,3 +1,7 @@
 import os
+import time
 
-os.system("main.py")
+local_path = os.path.abspath(".")
+print(local_path)
+os.system(f"python {local_path}\\main.py")
+time.sleep(5)
