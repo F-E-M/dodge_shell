@@ -166,9 +166,9 @@ def check_kick(steve, hard):
     if steve.kick:
         if steve.kicking <= 0:
             steve.kick = False
-            ncd = 15 - int(hard * 0.5)
-            if ncd < 5:
-                ncd = 5
+            ncd = 16 - hard
+            if ncd < 3:
+                ncd = 3
             steve.cool_down = ncd
             steve.kick_start = None
         else:
