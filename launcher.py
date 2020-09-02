@@ -38,8 +38,29 @@ def launcher():
                 frame = 180
 
 
-def die(score, hard):
-    g.msgbox("游戏结束，分数: " + str(score) + "，等级: " + str(hard))
+def die(score, hard, ele_time, sr, nr):
+    print("\n\n\n"
+          "你死了！\n"
+          "You died!")
+    print(f"""
+==========游戏报告==========
+分数: {str(score)} 
+等级: {str(hard)}
+技能使用次数: {ele_time}
+存活时间: {round(nr - sr, 2)}s
+==========================
+
+==========Game report==========
+score: {str(score)} 
+level: {str(hard)}
+skill used: {ele_time}
+living time: {round(nr - sr, 2)}s
+===============================
+""")
+    input("""
+    按下回车退出游戏
+    press [Enter] to end game\n
+    """)
     exit()
 
 

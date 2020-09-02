@@ -7,7 +7,7 @@ from game_stats import GameStats
 game_stats = GameStats()
 
 
-def check_events(steve, start_rec, screen, my_font, piano, hard):
+def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
@@ -47,6 +47,7 @@ def check_events(steve, start_rec, screen, my_font, piano, hard):
                 ka = int(hard / 5) + 1
                 steve.kicking = 2 * ka
                 steve.kick_start = time.time()
+                ele_time += 1
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 # stop moving right
@@ -100,10 +101,11 @@ def check_events(steve, start_rec, screen, my_font, piano, hard):
                 ka = 1
             steve.kicking = 2 * ka
             steve.kick_start = time.time()
+            ele_time += 1
         if mkpiano.piano.joystick_x == 0:
             steve.LF = False
             steve.RF = False
-    return start_rec
+    return start_rec, ele_time
 
 
 def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):
@@ -155,10 +157,10 @@ def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard):
     return heal, tnt_num, score
 
 
-def check_die(heal, score, hard):
+def check_die(heal, score, hard, ele_time, start_rec, now_rec):
     if heal < 0:
         pygame.quit()
-        return die(score, hard)
+        return die(score, hard, ele_time, start_rec, now_rec)
     return None
 
 

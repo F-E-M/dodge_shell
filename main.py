@@ -23,6 +23,7 @@ import random
 def run_game(piano, frame):
     # init game
     hard = 1
+    ele_time = 0
     clock = pygame.time.Clock()
     pygame.init()
     settings = Settings()
@@ -86,7 +87,9 @@ def run_game(piano, frame):
                 tnts.add(new_tnt)
                 t1 = t2
 
-        start_rec = gf.check_events(steve, start_rec, screen, my_font, piano, hard)
+        func_return = gf.check_events(steve, start_rec, screen, my_font, piano, hard, ele_time)
+        start_rec = func_return[0]
+        ele_time = func_return[1]
         steve.update()
 
         tnts.update()
@@ -96,7 +99,7 @@ def run_game(piano, frame):
         heal = ctcsl[0]
         tnt_num = ctcsl[1]
         gs.score = ctcsl[2]
-        con = gf.check_die(heal, gs.score, hard)
+        con = gf.check_die(heal, gs.score, hard, ele_time, start_rec, nowrec)
         if con:
             run_game(pianos, frame)
         for tnt in tnts.copy():
