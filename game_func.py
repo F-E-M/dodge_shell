@@ -187,3 +187,11 @@ def kick_minus(steve):
     if time.time() - game_stats.tick >= 1:
         steve.cool_down -= 1
         game_stats.tick = time.time()
+
+
+def speed_check(steve, hard) -> int:
+    if steve.kick:
+        steve.speed += hard
+    else:
+        steve.speed = hard * 1.3
+    return steve.speed
