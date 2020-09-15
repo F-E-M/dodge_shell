@@ -191,7 +191,7 @@ def kick_minus(steve):
 
 def speed_check(steve, hard) -> int:
     if steve.kick:
-        steve.speed += hard
+        steve.speed *= 1.5
     else:
         steve.speed = hard * 1.3
     return steve.speed
