@@ -42,12 +42,14 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
                             exit()
                     pygame.display.flip()
                 time.sleep(1)
-            if event.key == pygame.K_SPACE and steve.cool_down <= 0:
+            if event.key == pygame.K_SPACE and steve.cool_down <= 0 and steve.magic >= int(hard * 0.5 + 1) * 20:
                 steve.kick = True
                 ka = int(hard / 5) + 1
                 steve.kicking = 2 * ka
                 steve.kick_start = time.time()
                 ele_time += 1
+                steve.magic -= int(hard * 0.5 + 1) * 20
+                game_stats.mg_tick = time.time()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 # stop moving right
@@ -94,21 +96,21 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
                         exit()
                 pygame.display.flip()
             time.sleep(1)
-        if mkpiano.piano.is_pressed() and steve.cool_down <= 0:
+        if mkpiano.piano.is_pressed() and steve.cool_down <= 0 and steve.magic >= int(hard * 0.5 + 1) * 20:
             steve.kick = True
-            ka = int(hard * 0.2)
-            if ka < 1:
-                ka = 1
+            ka = int(hard / 5) + 1
             steve.kicking = 2 * ka
             steve.kick_start = time.time()
             ele_time += 1
+            steve.magic -= int(hard * 0.5 + 1) * 20
+            game_stats.mg_tick = time.time()
         if mkpiano.piano.joystick_x == 0:
             steve.LF = False
             steve.RF = False
     return start_rec, ele_time
 
 
-def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):
+def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic):
     screen.fill((255, 255, 255))
 
     # blit steve
@@ -129,6 +131,9 @@ def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down):
     # blit cool_down
     cool_down.blitme_c()
     cool_down.blitme_a()
+
+    # blit magic
+    magic.blitme()
 
     # update screen
     pygame.display.flip()
@@ -195,3 +200,15 @@ def speed_check(steve, hard) -> int:
     else:
         steve.speed = hard * 1.3
     return steve.speed
+
+
+def magic_return(magic: int, hard: int) -> int:
+    max_magic = hard * 50
+    if max_magic < 100:
+        max_magic = 100
+    if time.time() - game_stats.mg_tick >= 1 and magic < max_magic:
+        magic += int(0.5 * hard) + 1
+        game_stats.mg_tick = time.time()
+        if magic > max_magic:
+            magic = max_magic
+    return magic

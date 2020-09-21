@@ -34,6 +34,9 @@ class Steve:
         self.kick_start = None
         self.cool_down = 0
 
+        # magic
+        self.magic = 100
+
     def update(self):
         if self.RF and self.rect.right < self.screen_rect.right:
             self.center += self.speed

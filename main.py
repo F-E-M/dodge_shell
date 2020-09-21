@@ -15,7 +15,7 @@ from Steve import Steve, Health
 from pygame.sprite import Group
 from tnt import TNT
 from launcher import *
-from scoreboard import Scoreboard, CoolDown
+from scoreboard import Scoreboard, CoolDown, Magic
 from game_stats import GameStats
 import random
 
@@ -49,6 +49,7 @@ def run_game(piano, frame):
     h1 = Health(screen, 1)
     h2 = Health(screen, 2)
     h3 = Health(screen, 3)
+    magic = Magic(screen)
     t1 = time.time()
     start_rec = t1
     tnt_num = 0
@@ -76,6 +77,7 @@ def run_game(piano, frame):
             steve_tnt = True
         sb = Scoreboard(screen, gs, hard)
         cool_down = CoolDown(screen, steve)
+        magic.prep_display(steve.magic)
         steve.speed = hard * 1.3
         if t2 - t1 > tntw:
             if tnt_num <= 3:
@@ -95,6 +97,7 @@ def run_game(piano, frame):
         tnts.update()
         gf.kick_minus(steve)
         gf.check_kick(steve, hard)
+        steve.magic = gf.magic_return(steve.magic, hard)
         steve.speed = gf.speed_check(steve, hard)
         ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, gs.score, hard)
         heal = ctcsl[0]
@@ -108,7 +111,7 @@ def run_game(piano, frame):
                 tnt_num -= 1
                 tnts.remove(tnt)
                 gs.score += hard
-        gf.update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down)
+        gf.update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic)
 
 
 data_for_game = launcher()
