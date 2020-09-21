@@ -1,4 +1,4 @@
-# version <1.3.1-beta> <pre-release>
+# version <1.3.1-beta-II> <pre-release>
 # ==========project from github organization "Infinity-EFP"=========
 # code by Infinity-Energy
 # art by Felixqwq
