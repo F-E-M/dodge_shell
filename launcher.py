@@ -10,7 +10,7 @@ def launcher():
     while True:
         open_yn = g.indexbox(
             f"""
-                                  躲避TNT V1.3.1-beta-II
+                              躲避TNT V1.3.2-alpha-I
                                 指尖钢琴模式:{piano}
                                     皮肤:{skin}
                                     tps:{frame} 
