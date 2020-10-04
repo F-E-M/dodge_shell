@@ -81,17 +81,16 @@ class Magic:
     def __init__(self, screen):
         self.screen = screen
         self.screen_rect = screen.get_rect()
-        self.color = (0, 100, 255)
-        self.mg_img = None
         self.mg_rect = None
         self.font = pygame.font.SysFont(None, 48)
 
-    def prep_display(self, magic):
-        magic = str(magic)
-        self.mg_img = self.font.render(magic, True, self.color)
-        self.mg_rect = self.mg_img.get_rect()
-        self.mg_rect.left = self.screen_rect.left
-        self.mg_rect.top = 73
-
-    def blitme(self):
-        self.screen.blit(self.mg_img, self.mg_rect)
+    def blitme(self, magic, hard, heal):
+        mx = hard * 50
+        if mx < 100:
+            mx = 100
+        if heal == 0:
+            pygame.draw.rect(self.screen, (90, 90, 90), (0, 15, mx * 0.8, 10))
+            pygame.draw.rect(self.screen, (0, 100, 255), (0, 15, magic * 0.8, 10))
+        else:
+            pygame.draw.rect(self.screen, (90, 90, 90), (0, 73, mx * 0.8, 10))
+            pygame.draw.rect(self.screen, (0, 100, 255), (0, 73, magic * 0.8, 10))

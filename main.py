@@ -73,7 +73,6 @@ def run_game(piano, frame):
             steve_tnt = True
         sb = Scoreboard(screen, gs, hard)
         cool_down = CoolDown(screen, steve)
-        magic.prep_display(steve.magic)
         steve.speed = hard * 1.3
         if t2 - t1 > tntw:
             if tnt_num <= 3:
@@ -107,7 +106,7 @@ def run_game(piano, frame):
                 tnt_num -= 1
                 tnts.remove(tnt)
                 gs.score += hard
-        gf.update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic)
+        gf.update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, heal)
 
 
 data_for_game = launcher()

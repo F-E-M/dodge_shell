@@ -110,7 +110,7 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
     return start_rec, ele_time
 
 
-def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic):
+def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, heal):
     screen.fill((255, 255, 255))
 
     # blit steve
@@ -133,7 +133,7 @@ def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic):
     cool_down.blitme_a()
 
     # blit magic
-    magic.blitme()
+    magic.blitme(steve.magic, hard, heal)
 
     # update screen
     pygame.display.flip()
