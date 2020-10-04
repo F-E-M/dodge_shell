@@ -42,13 +42,13 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
                             exit()
                     pygame.display.flip()
                 time.sleep(1)
-            if event.key == pygame.K_SPACE and steve.cool_down <= 0 and steve.magic >= int(hard * 0.5 + 1) * 20:
+            if event.key == pygame.K_SPACE and steve.cool_down <= 0 and steve.magic >= int(hard / 3 + 1) * 40:
                 steve.kick = True
                 ka = int(hard / 5) + 1
                 steve.kicking = 2 * ka
                 steve.kick_start = time.time()
                 ele_time += 1
-                steve.magic -= int(hard * 0.5 + 1) * 20
+                steve.magic -= int(hard / 3 + 1) * 40
                 game_stats.mg_tick = time.time()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
@@ -96,13 +96,13 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
                         exit()
                 pygame.display.flip()
             time.sleep(1)
-        if mkpiano.piano.is_pressed() and steve.cool_down <= 0 and steve.magic >= int(hard * 0.5 + 1) * 20:
+        if mkpiano.piano.is_pressed() and steve.cool_down <= 0 and steve.magic >= int(hard / 4 + 1) * 40:
             steve.kick = True
             ka = int(hard / 5) + 1
             steve.kicking = 2 * ka
             steve.kick_start = time.time()
             ele_time += 1
-            steve.magic -= int(hard * 0.5 + 1) * 20
+            steve.magic -= int(hard / 4 + 1) * 40
             game_stats.mg_tick = time.time()
         if mkpiano.piano.joystick_x == 0:
             steve.LF = False
