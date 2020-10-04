@@ -69,7 +69,7 @@ def run_game(piano, frame):
             hard = nhard
         tntw = int(nowrec + 70 - start_rec) / (hard * 41)
         steve_tnt = False
-        if random.randint(1, 10) == 0:
+        if random.randint(1, 10) == 5:
             steve_tnt = True
         sb = Scoreboard(screen, gs, hard)
         cool_down = CoolDown(screen, steve)
