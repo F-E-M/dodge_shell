@@ -1,6 +1,5 @@
 import easygui as g
 
-piano = False
 skin = "steve"
 frame = 180
 
