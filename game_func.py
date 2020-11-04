@@ -1,14 +1,13 @@
-import time
-
 import pygame
+import time
+from launcher import die
 from Steve import use_totem
 from game_stats import GameStats
-from launcher import die
 
 game_stats = GameStats()
 
 
-def check_events(steve, start_rec, screen, my_font, hard, ele_time):
+def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
@@ -58,7 +57,7 @@ def check_events(steve, start_rec, screen, my_font, hard, ele_time):
             if event.key == pygame.K_LEFT:
                 # stop moving left
                 steve.LF = False
-    return start_rec, ele_time
+    return start_rec, ele_time, score, tnt_num
 
 
 def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, heal):
