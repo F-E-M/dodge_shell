@@ -86,7 +86,7 @@ def run_game(frame):
                 tnts.add(new_tnt)
                 t1 = t2
 
-        func_return = gf.check_events(steve, start_rec, screen, my_font, piano, hard, ele_time)
+        func_return = gf.check_events(steve, start_rec, screen, my_font, hard, ele_time)
         start_rec = func_return[0]
         ele_time = func_return[1]
         steve.update()
