@@ -146,10 +146,11 @@ def kick_minus(steve):
 
 
 def speed_check(steve, hard) -> int:
+    original_speed = 0.6 + (0.4 + ((hard - 1) * 0.4 + 0.4) * hard / 2)
     if steve.kick:
-        steve.speed *= 1.5
+        steve.speed = original_speed * 1.5
     else:
-        steve.speed = hard * 1.3
+        steve.speed = original_speed
     return steve.speed
 
 
