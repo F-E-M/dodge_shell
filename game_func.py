@@ -57,57 +57,7 @@ def check_events(steve, start_rec, screen, my_font, piano, hard, ele_time):
             if event.key == pygame.K_LEFT:
                 # stop moving left
                 steve.LF = False
-    if piano:
-        import mkpiano
-        if mkpiano.piano.joystick_x > 0:
-            # move steve right
-            steve.RF = True
-            steve.LF = False
-        if mkpiano.piano.joystick_x < 0:
-            # move steve left
-            steve.LF = True
-            steve.RF = False
-        if mkpiano.piano.is_pressed(2):
-            pygame.mouse.set_visible(True)
-            steve.LF = False
-            steve.RF = False
-            p1 = time.time()
-            breaking = False
-            screen.fill((0, 0, 0))
-            text = my_font.render("暂停", True, (255, 255, 255))
-            screen.blit(text, (500, 260))
-            pygame.display.flip()
-            time.sleep(1)
-            while True:
-                if breaking:
-                    break
-                screen.fill((0, 0, 0))
-                text = my_font.render("暂停", True, (255, 255, 255))
-                screen.blit(text, (600, 300))
-                pygame.display.flip()
-                if mkpiano.piano.is_pressed(2):
-                    pygame.mouse.set_visible(False)
-                    p2 = time.time()
-                    start_rec += p2 - p1
-                    breaking = True
-                e = pygame.event.get()
-                for ev in e:
-                    if ev.type == pygame.QUIT:
-                        exit()
-                pygame.display.flip()
-            time.sleep(1)
-        if mkpiano.piano.is_pressed() and steve.cool_down <= 0 and steve.magic >= int(hard / 4 + 1) * 40:
-            steve.kick = True
-            ka = int(hard / 5) + 1
-            steve.kicking = 2 * ka
-            steve.kick_start = time.time()
-            ele_time += 1
-            steve.magic -= int(hard / 4 + 1) * 40
-            game_stats.mg_tick = time.time()
-        if mkpiano.piano.joystick_x == 0:
-            steve.LF = False
-            steve.RF = False
-    return start_rec, ele_time
+    return start_rec, ele_time, score, tnt_num
 
 
 def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, heal):

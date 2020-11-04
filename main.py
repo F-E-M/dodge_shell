@@ -20,7 +20,7 @@ from game_stats import GameStats
 import random
 
 
-def run_game(piano, frame):
+def run_game(frame):
     # init game
     hard = 1
     ele_time = 0
@@ -100,7 +100,7 @@ def run_game(piano, frame):
         gs.score = ctcsl[2]
         con = gf.check_die(heal, gs.score, hard, ele_time, start_rec, nowrec)
         if con:
-            run_game(pianos, frame)
+            run_game(frame)
         for tnt in tnts.copy():
             if tnt.rect.top >= screen_rect.bottom:
                 tnt_num -= 1
@@ -110,8 +110,7 @@ def run_game(piano, frame):
 
 
 data_for_game = launcher()
-pianos = data_for_game[0]
-skin = data_for_game[1]
-frame = data_for_game[2]
+skin = data_for_game[0]
+frame = data_for_game[1]
 
-run_game(pianos, frame)
+run_game(frame)
