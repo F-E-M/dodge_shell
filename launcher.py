@@ -14,7 +14,7 @@ def launcher():
                                     tps:{frame} 
 """, choices=["开始游戏", "退出游戏", "更换皮肤", "设置tps"])
         if open_yn == 0:
-            return piano, skin, frame
+            return skin, frame
         elif open_yn == 1 or open_yn is None:
             exit()
         elif open_yn == 2:
