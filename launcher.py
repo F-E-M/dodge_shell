@@ -30,7 +30,7 @@ def launcher():
                 else:
                     frame = 180
             except ValueError:
-                g.msgbox("错误的帧数！")
+                g.msgbox("错误的tps数！")
                 frame = 180
 
 
