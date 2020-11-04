@@ -75,12 +75,12 @@ def run_game(frame):
             steve_tnt = True
         sb = Scoreboard(screen, gs, hard)
         cool_down = CoolDown(screen, steve)
-        steve.speed = hard * 1.3
+        steve.speed += hard * 0.4
         if t2 - t1 > tntw:
             if tnt_num <= 3:
                 tnt_num += 1
                 new_tnt = TNT(screen)
-                new_tnt.speed += hard * 0.6
+                new_tnt.speed += hard * 0.15
                 if steve_tnt:
                     new_tnt.rect.centerx = steve.rect.centerx
                 tnts.add(new_tnt)
