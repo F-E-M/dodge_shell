@@ -1,8 +1,10 @@
-# version <1.3.2-alpha-I> <pre-release>
-# ==========project from github organization "Infinity-EFP"=========
+# ===========project from github organization "F-E-M"==========
 # code by Infinity-Energy
-# art by Felixqwq
+# art by Infinity-Energy, Felixqwq
 # test by Infinity-Energy
+# ==========Thanks==========
+# "Liangyin" Studios provided pre-development support
+# The "Xes coding community" provides initial code hosting support
 
 # imports
 import time
