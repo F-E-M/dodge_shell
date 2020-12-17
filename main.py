@@ -2,9 +2,6 @@
 # code by Infinity-Energy
 # art by Infinity-Energy, Felixqwq
 # test by Infinity-Energy
-# ==========Thanks==========
-# "Liangyin" Studios provided pre-development support
-# The "Xes coding community" provides initial code hosting support
 
 # imports
 import time
