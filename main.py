@@ -101,7 +101,7 @@ def run_game(frame, set_music):
         gf.check_kick(steve, hard)
         steve.magic = gf.magic_return(steve.magic, hard)
         steve.speed = gf.speed_check(steve, hard)
-        ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, gs.score, hard)
+        ctcsl = gf.check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, gs.score, hard, steve.magic)
         heal = ctcsl[0]
         tnt_num = ctcsl[1]
         gs.score = ctcsl[2]
