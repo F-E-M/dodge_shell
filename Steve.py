@@ -26,7 +26,7 @@ class Steve:
         self.LF = False
 
         # speed
-        self.speed = 0.6
+        self.speed = None
 
         # kicking
         self.kick = False
