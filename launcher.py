@@ -10,7 +10,7 @@ set_music = None
 
 
 def launcher():
-    global skin, frame
+    global skin, frame, bgm_name_list, now_music, set_music
     while True:
         open_yn = g.indexbox(
             f"""
