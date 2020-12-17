@@ -22,7 +22,7 @@ from game_stats import GameStats
 import random
 
 
-def run_game(frame):
+def run_game(frame, set_music):
     # init game
     hard = 1
     ele_time = 0
@@ -36,6 +36,11 @@ def run_game(frame):
     else:
         my_font = pygame.font.SysFont("kaitif", 100)
     tnts = Group()
+
+    # init bgm
+    if set_music is not None:
+        pygame.mixer.music.load(f"game_music/background/{set_music}")
+        pygame.mixer.music.play(-1)
 
     # init window
     screen = pygame.display.set_mode((settings.width, settings.height))
@@ -114,5 +119,6 @@ def run_game(frame):
 data_for_game = launcher()
 skin = data_for_game[0]
 frame = data_for_game[1]
+set_music = data_for_game[2]
 
-run_game(frame)
+run_game(frame, set_music)
