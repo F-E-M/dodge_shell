@@ -74,7 +74,7 @@ def run_game(frame, set_music):
         nhard = int((nowrec + 20 - start_rec) / (19 + int(hard / 2)))
         if nhard > hard:
             hard = nhard
-        tntw = int(nowrec + 140 - start_rec) / (hard * 80)
+        tntw = int(nowrec + 140 - start_rec) / (hard * 90)
         steve_tnt = False
         if random.randint(1, 10) == 5:
             steve_tnt = True
