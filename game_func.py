@@ -100,9 +100,12 @@ def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, h
     pygame.display.flip()
 
 
-def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard):
+def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard, magic):
     if pygame.sprite.spritecollideany(steve, tnts):
         if steve.kick is False:
+            magic = hard * 50
+            if magic < 100:
+                magic = 100
             heal -= 1
             use_totem(screen, steve, heal)
             for tnt in tnts:
@@ -120,7 +123,7 @@ def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard):
                     tnt_num -= 1
                     score += hard * 2
                     break
-    return heal, tnt_num, score
+    return heal, tnt_num, score, magic
 
 
 def check_die(heal, score, hard, ele_time, start_rec, now_rec):
