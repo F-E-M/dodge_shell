@@ -118,7 +118,7 @@ def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard):
                 if tnt.rect.colliderect(steve):
                     tnts.remove(tnt)
                     tnt_num -= 1
-                    score += int(hard / 2)
+                    score += hard * 2
                     break
     return heal, tnt_num, score
 
