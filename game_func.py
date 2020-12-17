@@ -86,6 +86,16 @@ def update_screen(screen, steve, tnts, sb, h1, h2, h3, cool_down, magic, hard, h
     # blit magic
     magic.blitme(steve.magic, hard, heal)
 
+    font = pygame.font.SysFont(None, 20)
+    mxm = hard * 50
+    if mxm < 100:
+        mxm = 100
+    word_img = font.render(f"{steve.magic}/{mxm}  +{(int(0.2 * hard) + 1) * 2}/s", True, (0, 100, 255))
+    if heal != 0:
+        screen.blit(word_img, (0, 83))
+    else:
+        screen.blit(word_img, (0, 25))
+
     # update screen
     pygame.display.flip()
 
