@@ -170,7 +170,7 @@ def magic_return(magic: int, hard: int) -> int:
     max_magic = hard * 50
     if max_magic < 100:
         max_magic = 100
-    if time.time() - game_stats.mg_tick >= 0.2 and magic < max_magic:
+    if time.time() - game_stats.mg_tick >= 0.5 and magic < max_magic:
         magic += int(0.2 * hard) + 1
         game_stats.mg_tick = time.time()
         if magic > max_magic:
