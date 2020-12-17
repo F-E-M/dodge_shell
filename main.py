@@ -105,9 +105,8 @@ def run_game(frame, set_music):
         heal = ctcsl[0]
         tnt_num = ctcsl[1]
         gs.score = ctcsl[2]
-        con = gf.check_die(heal, gs.score, hard, ele_time, start_rec, nowrec)
-        if con:
-            run_game(frame)
+        steve.magic = ctcsl[3]
+        gf.check_die(heal, gs.score, hard, ele_time, start_rec, nowrec)
         for tnt in tnts.copy():
             if tnt.rect.top >= screen_rect.bottom:
                 tnt_num -= 1

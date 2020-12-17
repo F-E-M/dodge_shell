@@ -129,8 +129,7 @@ def check_tnt_c_steve(tnts, steve, heal, tnt_num, screen, score, hard, magic):
 def check_die(heal, score, hard, ele_time, start_rec, now_rec):
     if heal < 0:
         pygame.quit()
-        return die(score, hard, ele_time, start_rec, now_rec)
-    return None
+        die(score, hard, ele_time, start_rec, now_rec)
 
 
 def check_kick(steve, hard):
