@@ -14,7 +14,7 @@ def launcher():
     while True:
         open_yn = g.indexbox(
             f"""
-                              躲避TNT V1.3.2-alpha-I
+                              躲避TNT V1.4.0-alpha-I
                                     皮肤:{skin}
                                     bgm：{now_music}
                                     tps:{frame} 
